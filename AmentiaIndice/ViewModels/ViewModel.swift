@@ -9,7 +9,6 @@ import Firebase
 class ViewModel: ObservableObject {
     @Published var list = [Capitulo]()
     
-    
     func getData() {
         let db = Firestore.firestore()
         
@@ -23,6 +22,13 @@ class ViewModel: ObservableObject {
                                             nombre: document["nombre"] as? String ?? "",
                                             orden: document["orden"] as? Int ?? 0)
                         })
+                        
+                        //Ordenar la lista de menor a mayor
+                        let sortedList = self.list.sorted { capA, capB in
+                            return capA.orden < capB.orden
+                        }
+                        self.list = sortedList
+                        
                     }
                 } else {
                     // Handle error

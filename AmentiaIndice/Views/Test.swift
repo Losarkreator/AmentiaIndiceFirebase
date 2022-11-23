@@ -15,19 +15,22 @@ struct Test: View {
     
     var body: some View {
         VStack {
-            Text("Que pasa?")
+            Text("Amentia")
+                .font(.title)
+                
+            
             List(model.list) { item in
-                VStack {
-                    Text(String(item.orden))
-                    Text(item.nombre)
-                    Button(action: {
-                        imprimirCosas()
-                    }, label: {
-//                        Text("Boton")
-                        
-                    })
+                        HStack {
+                            Text(String(item.orden))
+                            Text(item.nombre)
+                            
+//                            Button(action: {
+//                                imprimirCosas()
+//                            }, label: {Text("Boton")})
+                            
+                        }
                 }
-            }
+
         }
     }
     
