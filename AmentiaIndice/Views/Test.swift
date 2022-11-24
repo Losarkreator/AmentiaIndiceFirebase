@@ -24,9 +24,9 @@ struct Test: View {
                             Text(String(item.orden))
                             Text(item.nombre)
                             
-//                            Button(action: {
-//                                imprimirCosas()
-//                            }, label: {Text("Boton")})
+                            Button(action: {
+                                imprimirCosas()
+                            }, label: {Text("Boton")})
                             
                         }
                 }
