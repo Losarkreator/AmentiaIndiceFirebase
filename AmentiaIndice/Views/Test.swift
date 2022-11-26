@@ -15,21 +15,22 @@ struct Test: View {
     
     var body: some View {
         VStack {
-            Text("Amentia")
-                .font(.title)
-                
             
-            List(model.list) { item in
+            
+            NavigationView {
+                List(model.list) { item in
+                    
+                    NavigationLink(destination: EmptyView()) {
                         HStack {
                             Text(String(item.orden))
                             Text(item.nombre)
-                            
-                            Button(action: {
-                                imprimirCosas()
-                            }, label: {Text("Boton")})
-                            
                         }
+                    }
+                    
                 }
+                .navigationBarTitle(Text("Amentia"))
+            }
+            
 
         }
     }
