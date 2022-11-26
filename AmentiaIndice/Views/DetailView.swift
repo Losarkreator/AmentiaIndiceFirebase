@@ -1,9 +1,7 @@
 //
 //  DetailView.swift
 //  AmentiaIndice
-//
 //  Created by Losark on 26/11/22.
-//
 
 import SwiftUI
 

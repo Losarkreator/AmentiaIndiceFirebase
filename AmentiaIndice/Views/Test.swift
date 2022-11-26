@@ -29,6 +29,7 @@ struct Test: View {
                     
                 }
                 .navigationBarTitle(Text("Amentia"))
+                .listStyle(.sidebar)
             }
             
 
