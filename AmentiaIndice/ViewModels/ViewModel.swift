@@ -33,10 +33,26 @@ class ViewModel: ObservableObject {
                     }
                 } else {
                     // Handle error
+                    print("Error al conseguir los datos. getData")
                 }
             }
         }
     }
+    
+    
+    func updateData(capToUpdate: Capitulo) {
+        // Get a reference to the database
+        let db = Firestore.firestore()
+        // Set the data to update
+        db.collection("capitulos").document(capToUpdate.id).setData(["descripcion":"Updated: \(capToUpdate.descripcion)"], merge: true) { error in
+            // Check for errors
+            if error == nil {
+                // Get the new data
+                self.getData()
+            }
+        }
+    }
+    
     
     func testPrint() {
         print("Gesto reconocido")
