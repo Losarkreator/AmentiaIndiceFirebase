@@ -7,6 +7,7 @@ import SwiftUI
 
 struct DetailView: View {
     let item: Capitulo
+    @ObservedObject var model = ViewModel()
     
     var body: some View {
         VStack {
@@ -14,7 +15,11 @@ struct DetailView: View {
             ScrollView {
                 Text(item.descripcion)
                     .font(.body)
-//                    .background(Color.yellow)
+                    .onLongPressGesture(minimumDuration: 2) {
+                        model.testPrint()
+                    }
+                //.onTapGesture(count: 2)
+                //.background(Color.yellow)
             }
             .padding(.horizontal)
         }

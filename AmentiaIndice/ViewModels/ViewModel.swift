@@ -34,12 +34,13 @@ class ViewModel: ObservableObject {
                 } else {
                     // Handle error
                 }
-                
             }
         }
-        
     }
     
+    func testPrint() {
+        print("Gesto reconocido")
+    }
     
 }
 
