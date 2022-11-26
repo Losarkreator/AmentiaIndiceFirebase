@@ -20,7 +20,8 @@ class ViewModel: ObservableObject {
                             //Crear un documento por cada documento devuelto
                             return Capitulo(id: document.documentID,
                                             nombre: document["nombre"] as? String ?? "",
-                                            orden: document["orden"] as? Int ?? 0)
+                                            orden: document["orden"] as? Int ?? 0,
+                                            descripcion: document["descripcion"] as? String ?? "Descripción no disponible")
                         })
                         
                         //Ordenar la lista de menor a mayor

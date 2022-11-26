@@ -9,5 +9,5 @@ struct Capitulo: Identifiable {
     var id: String
     var nombre: String
     var orden: Int
-    var descripcion: String?
+    var descripcion: String
 }

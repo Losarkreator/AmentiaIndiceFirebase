@@ -14,18 +14,14 @@ struct DetailView: View {
         VStack {
             
             ScrollView {
-                Text(item.descripcion ?? "Descripción no disponible")
+                Text(item.descripcion)
                     .font(.body)
 //                    .background(Color.yellow)
             }
             .padding(.horizontal)
-            .padding(.top, 50)
         }
-        .navigationTitle(Text(item.nombre))
         .frame(maxWidth: .infinity)
-//        .background(Color.red)
-        
-        
+        .navigationBarTitle(Text(item.nombre), displayMode: .inline)
         
     }
 }
