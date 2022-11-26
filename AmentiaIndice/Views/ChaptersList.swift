@@ -1,12 +1,12 @@
 //
-//  Test.swift
+//  ChaptersList.swift
 //  AmentiaIndice
 //  Created by cturrion on 22/11/22.
 
 import SwiftUI
 import Firebase
 
-struct Test: View {
+struct ChaptersList: View {
     
     @ObservedObject var model = ViewModel()
     
@@ -45,7 +45,7 @@ struct Test: View {
 }
 
 //MARK: - Funciones
-extension Test {
+extension ChaptersList {
     
     func imprimirCosas(){
         print("FUNCIONA")
@@ -53,8 +53,8 @@ extension Test {
     
 }
 
-struct Test_Previews: PreviewProvider {
+struct ChaptersList_Previews: PreviewProvider {
     static var previews: some View {
-        Test()
+        ChaptersList()
     }
 }
