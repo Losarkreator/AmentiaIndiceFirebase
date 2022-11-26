@@ -20,7 +20,7 @@ struct Test: View {
             NavigationView {
                 List(model.list) { item in
                     
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: DetailView(item: item)) {
                         HStack {
                             Text(String(item.orden))
                             Text(item.nombre)
