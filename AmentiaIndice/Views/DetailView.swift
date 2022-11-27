@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    let item: Capitulo
+    var item: Capitulo
     @ObservedObject var model = ViewModel()
     @State private var isShowingViewBottom = true
     @State var textoDescripcion = ""
@@ -17,6 +17,7 @@ struct DetailView: View {
             ScrollView {
                 // Cambiar texto para que pueda ser editado:
                 Text(item.descripcion)
+//                Text(model.list.description)
                     .font(.body)
                     .frame(maxWidth: .infinity)
 //                    .onLongPressGesture(minimumDuration: 2) //
@@ -25,9 +26,7 @@ struct DetailView: View {
                         switchButtonsView()
                         model.testPrint()
                     }
-//                .background(Color.yellow)
             }
-//            .background(Color.purple)
             
             if isShowingViewBottom {
                 HStack {
@@ -41,17 +40,13 @@ struct DetailView: View {
                         Image(systemName: "paperplane")
                         Text("Guardar")
                     })
-                    
-//                    Rectangle()
-//                        .frame(width: 200, height: 200)
-//                        .foregroundColor(.red)
                 }
                 .frame(height: 50)
-//                .background(Color.orange)
             }
             
             
         }
+        .onAppear(perform: model.getData)
         .padding(.horizontal)
         .frame(maxWidth: .infinity)
         .navigationBarTitle(Text(item.nombre), displayMode: .inline)
@@ -63,11 +58,11 @@ struct DetailView: View {
 extension DetailView {
     func switchButtonsView() {
         isShowingViewBottom = !isShowingViewBottom
-//        print("Bool es: \(isShowingViewBottom)")
     }
     
     func sendText() {
-        model.updateData(capToUpdate: item)
+        model.updateData(capToUpdate: item, newText: textoDescripcion)
+        model.getData()
         textoDescripcion = ""
     }
     
@@ -76,9 +71,14 @@ extension DetailView {
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(item: Capitulo.init(id: "dsadsa",
-                                       nombre: "Capitulo 1",
-                                       orden: 1, descripcion: "Test text. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Fin")
-        )
+        
+//        DetailView(item: ViewModel().list[2])
+        
+         DetailView(item: Capitulo.init(id: "dsadsa",
+                                        nombre: "Capitulo 1",
+                                        orden: 1, descripcion: "Test text. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Fin")
+         )
+
+        
     }
 }

@@ -10,23 +10,18 @@ struct ChaptersList: View {
     
     @ObservedObject var model = ViewModel()
     
-    // Guardar con una referencia de Estado
-    @State var name = ""
-    
     var body: some View {
         VStack {
-            
-            
             NavigationView {
                 List(model.list) { item in
-                    
+                    //
                     NavigationLink(destination: DetailView(item: item)) {
                         HStack {
                             Text(String(item.orden))
                             Text(item.nombre)
                         }
                     }
-                    
+                   //
                 }
                 .navigationBarTitle(Text("Amentia"))
                 .listStyle(.sidebar)

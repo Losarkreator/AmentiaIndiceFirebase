@@ -31,27 +31,29 @@ class ViewModel: ObservableObject {
                         self.list = sortedList
                         
                     }
-                } else {
-                    // Handle error
-                    print("Error al conseguir los datos. getData")
                 }
+            } else {
+                // Handle error
+                print("Error al conseguir los datos. getData")
             }
         }
     }
     
     
-    func updateData(capToUpdate: Capitulo) {
-        // Get a reference to the database
+    func updateData(capToUpdate: Capitulo, newText: String) {
         let db = Firestore.firestore()
+        
         // Set the data to update
-        db.collection("capitulos").document(capToUpdate.id).setData(["descripcion":"Updated: \(capToUpdate.descripcion)"], merge: true) { error in
+        db.collection("capitulos").document(capToUpdate.id).setData(["descripcion": newText], merge: true) { error in
             // Check for errors
             if error == nil {
                 // Get the new data
-                self.getData()
+                    self.getData()
             }
         }
     }
+    
+    
     
     
     func testPrint() {
