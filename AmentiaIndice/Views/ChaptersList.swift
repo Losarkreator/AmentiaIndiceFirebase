@@ -15,7 +15,7 @@ struct ChaptersList: View {
             NavigationView {
                 List(model.list) { item in
                     //
-                    NavigationLink(destination: DetailView(item: item)) {
+                    NavigationLink(destination: DetailView(item: item).environmentObject(model)) {
                         HStack {
                             Text(String(item.orden))
                             Text(item.nombre)

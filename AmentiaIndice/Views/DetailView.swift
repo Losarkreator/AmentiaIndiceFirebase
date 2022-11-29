@@ -7,7 +7,7 @@ import SwiftUI
 
 struct DetailView: View {
     var item: Capitulo
-    @ObservedObject var model = ViewModel()
+    @EnvironmentObject var model : ViewModel
     @State private var isShowingViewBottom = true
     @State var textoDescripcion = ""
     
@@ -17,7 +17,6 @@ struct DetailView: View {
             ScrollView {
                 // Cambiar texto para que pueda ser editado:
                 Text(item.descripcion)
-//                Text(model.list.description)
                     .font(.body)
                     .frame(maxWidth: .infinity)
 //                    .onLongPressGesture(minimumDuration: 2) //
