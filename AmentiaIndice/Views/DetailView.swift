@@ -6,6 +6,10 @@
 import SwiftUI
 
 // Tutorial text editor: https://www.swiftbeta.com/textedit-en-swiftui/
+//Tutorial Alert: https://youtu.be/xG9v4llPR3Y?t=236
+
+//TODO: Presentar Alert de seguridad cuando le das al boton Back
+
 
 struct DetailView: View {
     var item: Capitulo
@@ -32,6 +36,7 @@ struct DetailView: View {
                                 message: Text("Esta acción no se puede deshacer."),
                                 buttons: [.default(Text("Guardar"),
                                                    action: {
+                        //TODO: Arreglar que vuelva a salir el teclado
                                                                 nameIsFocused = false
                                                                 sendText()
                     }),
@@ -72,20 +77,6 @@ struct DetailView_Previews: PreviewProvider {
                                        orden: 1, descripcion: "Test text. \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Fin")
         )
     }
-}
-
-
-//MARK: Alert
-extension DetailView {
-    //MARK: - Alert
-    // https://youtu.be/xG9v4llPR3Y?t=236
-    /*
-     Alert(
-     title: Text("Se ha guardado correctamente"),
-     message: Text("Wear sunscreen"),
-     dismissButton: .default(Text("OK"))
-     )
-     */
 }
 
 
