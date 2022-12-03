@@ -12,37 +12,38 @@ struct DetailView: View {
     @EnvironmentObject var model : ViewModel
     @State private var textoDescripcion = ""
     @FocusState private var nameIsFocused: Bool
-    //@State private var isShowingViewBottom = false
-    //@State private var endEdit = false
+    @State var isPresented = false
     
     var body: some View {
         VStack {
             TextEditor(text: $textoDescripcion)
                 .focused($nameIsFocused)
-            //.colorMultiply(.yellow)
-            //.onChange(of: textoDescripcion, perform: <#T##(Equatable) -> Void##(Equatable) -> Void##(_ newValue: Equatable) -> Void#>)
+//                .colorMultiply(nameIsFocused ? .yellow : .gray)
             
             if nameIsFocused {
                 Button(action: {
-                    sendText()
-                    nameIsFocused = false
-                    //                endEdit = true
+                    isPresented = true
                 }, label: {
                     Image(systemName: "paperplane")
                     Text("Guardar")
                 })
-//                .alert(
-//                    "Se ha guardado correctamente",
-//                    isPresented: $textoDescripcion) {
-//                        Button("OK", role: .cancel) { }
-//                    }
+                .actionSheet(isPresented: $isPresented, content: {
+                    ActionSheet(title: Text("¿Estas seguro?"),
+                                message: Text("Esta acción no se puede deshacer."),
+                                buttons: [.default(Text("Guardar"),
+                                                   action: {
+                                                                nameIsFocused = false
+                                                                sendText()
+                    }),
+                                          .destructive(Text("Cancelar"))
+                                ]
+                    )
+                })
             }
-            
-            
             
         }
         .onAppear{
-            model.getData()
+            //            model.getData()
             textoDescripcion = item.descripcion
         }
         .padding(.horizontal)
@@ -54,7 +55,7 @@ struct DetailView: View {
 
 //MARK: - Funciones
 extension DetailView {
-
+    
     func sendText() {
         model.updateData(capToUpdate: item, newText: textoDescripcion)
         model.getData()

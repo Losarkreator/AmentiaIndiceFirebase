@@ -22,6 +22,7 @@
 		52D0B643292CF73C0016E959 /* ChaptersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0B642292CF73C0016E959 /* ChaptersList.swift */; };
 		52D0B647292CF9650016E959 /* Capitulo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0B646292CF9650016E959 /* Capitulo.swift */; };
 		52D0B649292CF9B50016E959 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0B648292CF9B50016E959 /* ViewModel.swift */; };
+		873380E6293B4BDB000FE1EC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 873380E5293B4BDB000FE1EC /* Test.swift */; };
 		874AADF92932468900842855 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874AADF82932468900842855 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		52D0B642292CF73C0016E959 /* ChaptersList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersList.swift; sourceTree = "<group>"; };
 		52D0B646292CF9650016E959 /* Capitulo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitulo.swift; sourceTree = "<group>"; };
 		52D0B648292CF9B50016E959 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		873380E5293B4BDB000FE1EC /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		874AADF82932468900842855 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				52D0B624292CF3650016E959 /* ContentView.swift */,
 				52D0B642292CF73C0016E959 /* ChaptersList.swift */,
 				874AADF82932468900842855 /* DetailView.swift */,
+				873380E5293B4BDB000FE1EC /* Test.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				874AADF92932468900842855 /* DetailView.swift in Sources */,
 				52D0B625292CF3650016E959 /* ContentView.swift in Sources */,
 				52D0B623292CF3650016E959 /* AmentiaIndiceApp.swift in Sources */,
+				873380E6293B4BDB000FE1EC /* Test.swift in Sources */,
 				52D0B647292CF9650016E959 /* Capitulo.swift in Sources */,
 				52D0B643292CF73C0016E959 /* ChaptersList.swift in Sources */,
 			);
